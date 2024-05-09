@@ -50,11 +50,25 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container flex-column">
-            <div class="text-end text-black-50 px-4 py-2">
-                <a href="/login" class="btn btn-primary py-2">
-                    Login
-                </a>
-            </div>
+            @if (!Request::is('login'))
+                <div class="text-end text-black-50 px-4 py-2">
+                    <a href="/login" class="btn btn-primary py-2">
+                        Login
+                    </a>
+                </div>
+            @else
+                <div class="text-end text-black-50 px-4 py-2">
+                    <a href="/" class="btn btn-primary py-2">
+                        Back
+                    </a>
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
 
 
 
