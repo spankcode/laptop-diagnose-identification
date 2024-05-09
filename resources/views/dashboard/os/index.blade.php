@@ -77,7 +77,6 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('assets/js/pages/food-script.js') }}"></script>
     <script>
         $(document).on('click', '.btn-cancel', function(e) {
             e.preventDefault();
