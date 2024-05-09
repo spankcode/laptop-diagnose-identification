@@ -93,12 +93,3 @@
     </div>
 
 @endsection
-
-@section('script')
-    <script>
-        $(document).ready(function(e) {
-            let content = document.querySelector('#content');
-            content.value = content.value.replace(/<br\s*\/?>/g, '\n');
-        })
-    </script>
-@endsection

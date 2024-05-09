@@ -1,7 +1,10 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand text-center">
         <a href="/dashboard" class="app-brand-link">
-            <h4 class="app-brand-text demo menu-text fw-bolder mt-4">DASHBOARD</h4>
+            <h4 class="app-brand-text demo menu-text fw-bolder mt-4">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" style="fill: #566a7f; transform: ;msFilter:;"><path d="m21.512 6.112-3.89 3.889-3.535-3.536 3.889-3.889a6.501 6.501 0 0 0-8.484 8.486l-6.276 6.275a.999.999 0 0 0 0 1.414l2.122 2.122a.999.999 0 0 0 1.414 0l6.275-6.276a6.501 6.501 0 0 0 7.071-1.414 6.504 6.504 0 0 0 1.414-7.071z"></path></svg> --}}
+                DASHBOARD
+            </h4>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

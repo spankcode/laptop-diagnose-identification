@@ -4,3 +4,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+input[type="checkbox"],
+input[type="radio"] {
+    border-color: #566a7f80;
+}
