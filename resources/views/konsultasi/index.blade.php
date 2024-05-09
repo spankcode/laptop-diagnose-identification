@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     <div class="container container-p-y user-interface">
         <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
@@ -17,7 +16,9 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap" value="{{ old('nama_lengkap') }}" required autocomplete="off"/>
+                                    <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror"
+                                        id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap"
+                                        value="{{ old('nama_lengkap') }}" required autocomplete="off" />
                                     @error('nama_lengkap')
                                         <div class="invalid-feedback text-start">
                                             {{ $message }}
@@ -26,7 +27,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Alamat Email" value="{{ old('email') }}" required autocomplete="off"/>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                        id="email" name="email" placeholder="Alamat Email" value="{{ old('email') }}"
+                                        required autocomplete="off" />
                                     @error('email')
                                         <div class="invalid-feedback text-start">
                                             {{ $message }}
@@ -35,9 +38,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="os" class="form-label">Sistem Operasi</label>
-                                    <select name="os" id="os" class="form-select @error('os') is-invalid @enderror">
+                                    <select name="os" id="os"
+                                        class="form-select @error('os') is-invalid @enderror">
                                         @foreach ($data_os as $os)
-                                            <option value="{{ $os->nama }}" {{ old('os') == $os->nama ? 'selected' : '' }}>{{ $os->nama }}</option>
+                                            <option value="{{ $os->nama }}"
+                                                {{ old('os') == $os->nama ? 'selected' : '' }}>{{ $os->nama }}</option>
                                         @endforeach
                                     </select>
                                     @error('os')
@@ -46,7 +51,8 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <button class="btn btn-primary w-100 py-2 mt-2 mb-2" type="submit">Mulai Konsultasi</button>
+                                <button class="btn btn-primary w-100 py-2 mt-2 mb-2" type="submit">Mulai
+                                    Konsultasi</button>
                             </form>
                         </main>
                         <hr>
@@ -56,8 +62,4 @@
             </div>
         </div>
     </div>
-    <div class="text-end px-4 py-1">
-        <a href="/auth" class="fs-5">Login</a>
-    </div>
-
 @endsection
