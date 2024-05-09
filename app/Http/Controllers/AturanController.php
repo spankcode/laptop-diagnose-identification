@@ -89,7 +89,7 @@ class AturanController extends Controller
 
         Aturan::where('id', $aturan->id)->update($validatedData);
         
-        return Redirect::route('aturan.index')->with('success', "Data aturan: $aturan->kode_aturan berhasil ditambahkan");
+        return Redirect::route('aturan.index')->with('success', "Data aturan: $aturan->kode_aturan berhasil diupdate");
     }
 
     /**

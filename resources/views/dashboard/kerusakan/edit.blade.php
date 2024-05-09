@@ -32,7 +32,7 @@
                             <div class="mb-3">
                                 <p class="form-label">Gejala</p>
                                 @foreach ($data_gejala as $gejala)
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline mb-2">
                                         <input class="form-check-input" type="checkbox" name="gejala[{{ $loop->iteration - 1 }}]" id="{{ $gejala->id }}" value="{{ $gejala->kode_gejala }}" {{ in_array($gejala->kode_gejala, $list) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="{{ $gejala->id }}">{{ $gejala->kode_gejala }}</label>
                                     </div>
@@ -56,13 +56,4 @@
         </div>
     </div>
 
-@endsection
-
-@section('script')
-    <script>
-        $(document).ready(function(e) {
-            let content = document.querySelector('#content');
-            content.value = content.value.replace(/<br\s*\/?>/g, '\n');
-        })
-    </script>
 @endsection

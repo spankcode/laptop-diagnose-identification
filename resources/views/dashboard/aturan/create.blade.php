@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label for="gejala_sebelum" class="form-label">Gejala Sebelumnya</label>
                                 <select name="gejala_sebelum" id="gejala_sebelum" class="form-select">
-                                    <option>Tidak ada gejala sebelumnya</option>
+                                    <option value="">Tidak ada gejala sebelumnya</option>
                                     @foreach ($data_gejala as $gejala)
                                         <option value="{{ $gejala->kode_gejala }}" {{ old('gejala_sebelum') == $gejala->kode_gejala ? 'selected' : '' }}>{{ $gejala->kode_gejala }} - {{ $gejala->nama_gejala }}</option>
                                     @endforeach
@@ -50,7 +50,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="next_true" class="form-label">Jika Iya</label>
                                     <select name="next_true" id="next_true" class="form-select">
-                                        <option>Tidak ada tindakan selanjutnya</option>
+                                        <option value="">Tidak ada tindakan selanjutnya</option>
                                         @foreach ($data_gejala as $gejala)
                                             <option value="{{ $gejala->kode_gejala }}" {{ old('next_true') == $gejala->kode_gejala ? 'selected' : '' }}>{{ $gejala->kode_gejala }}</option>
                                         @endforeach
@@ -67,7 +67,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="next_false" class="form-label">Jika Tidak</label>
                                     <select name="next_false" id="next_false" class="form-select">
-                                        <option>Tidak ada tindakan selanjutnya</option>
+                                        <option value="">Tidak ada tindakan selanjutnya</option>
                                         @foreach ($data_gejala as $gejala)
                                             <option value="{{ $gejala->kode_gejala }}" {{ old('next_false') == $gejala->kode_gejala ? 'selected' : '' }}>{{ $gejala->kode_gejala }}</option>
                                         @endforeach
