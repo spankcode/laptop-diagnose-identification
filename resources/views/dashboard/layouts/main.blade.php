@@ -66,6 +66,72 @@
                 @include('dashboard.partials.navbar')
                 <!-- / Navbar -->
 
+                <div class="mt-4 ms-4 ps-1 align-items-center">
+                    @php
+                        $currentRoute = request()->path();
+                    @endphp
+                    <div class="d-flex text-white align-items-center">
+                        @if ($currentRoute === 'dashboard')
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Dashboard
+                                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                                </li>
+                            </ol>
+                        @elseif(str_starts_with($currentRoute, 'dashboard/gejala'))
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard"> Dashboard </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Gejala
+                                    <i class="menu-icon tf-icons bx bx-error-circle"></i>
+                                </li>
+                            </ol>
+                        @elseif(str_starts_with($currentRoute, 'dashboard/kerusakan'))
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard"> Dashboard </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Kerusakan
+                                    <i class="menu-icon tf-icons bx bx-wrench"></i>
+                                </li>
+                            </ol>
+                        @elseif(str_starts_with($currentRoute, 'dashboard/aturan'))
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard"> Dashboard </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Aturan
+                                    <i class="bx bx-cog me-2"></i>
+                                </li>
+                            </ol>
+                        @elseif(str_starts_with($currentRoute, 'dashboard/os'))
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard"> Dashboard </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    OS
+                                    <i class="menu-icon tf-icons bx bx-devices"></i>
+                                </li>
+                            </ol>
+                        @elseif($currentRoute === 'dashboard/konsultasi')
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard"> Dashboard </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Konsultasi
+                                    <i class="menu-icon tf-icons bx bx-file-blank"></i>
+                                </li>
+                            </ol>
+                        @endif
+                    </div>
+                </div>
+
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
