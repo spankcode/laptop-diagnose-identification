@@ -46,7 +46,7 @@
         <!-- Aturan -->
         <li class="menu-item {{ Request::is('dashboard/aturan*') ? 'active' : '' }}">
             <a href="/dashboard/aturan" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-list-ul"></i>
+                <i class="bx bx-cog me-2"></i>
                 <div>Aturan</div>
             </a>
         </li>

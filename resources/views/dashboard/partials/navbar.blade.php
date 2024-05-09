@@ -6,12 +6,6 @@
         </a>
     </div>
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-bell fs-4 lh-0"></i>
-            </div>
-        </div>
-
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <!-- User -->
             <div class="text-end me-2">
@@ -20,23 +14,15 @@
             </div>
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar mb-2">
+                    <div class="avatar avatar-online mb-2">
                         <i class="bx bxs-user p-2"
-                            style="font-size: 2em; background-color: #7695da; color: white; padding: 3px;"></i>
+                            style="font-size: 2em; background-color: #7695da; color: white; padding: 3px; border-radius: 50%;"></i>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bx bx-cog me-2"></i>
-                            <span class="align-middle">Settings</span>
-                        </a>
+                    <li class="dropdown-item">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">{{ auth()->user()->name }}</span>
                     </li>
                     <li>
                         <div class="dropdown-divider"></div>
