@@ -11,7 +11,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    {{-- <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.svg') }}" /> --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.svg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,12 +72,12 @@
                     @endphp
                     <div class="d-flex text-white align-items-center">
                         @if ($currentRoute === 'dashboard')
-                            <ol class="breadcrumb">
+                            {{-- <ol class="breadcrumb">
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Dashboard
                                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                                 </li>
-                            </ol>
+                            </ol> --}}
                         @elseif(str_starts_with($currentRoute, 'dashboard/gejala'))
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">

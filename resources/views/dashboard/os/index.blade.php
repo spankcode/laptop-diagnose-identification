@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-    <div class="container container-p-y">
+    <div class="container container-p-y pt-2">
         <div class="card">
             <h5 class="card-header">Data Sistem Operasi</h5>
             <div class="card-body">

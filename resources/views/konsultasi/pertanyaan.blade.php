@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container-fluid container-p-y row justify-content-center align-items-center">
-        <div class="row justify-content-center align-items-center h-full w-full">
-            <div class="col-xl-5 col-md-8 h-full w-full">
+    <div class="container container-p-y user-interface">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-6">
                 <div class="card">
                     <div class="text-center mt-5">
                         <h3 class="mb-4">Jawab pertanyaan berikut</h3>
@@ -14,12 +14,12 @@
                                 @csrf
                                 <h5 class="fw-normal">{{ $aturan->gejala->pertanyaan }}</h5>
                                 <div class="mb-4" style="font-size: 1.15em">
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline me-5">
                                         <input class="form-check-input @error('next') is-invalid @enderror" type="radio"
                                             id="next_false" value="{{ $aturan->next_false }}" name="next" required>
                                         <label class="form-check-label" for="next_false">Tidak</label>
                                     </div>
-                                    <div class="form-check form-check-inline me-5">
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input @error('next') is-invalid @enderror" type="radio"
                                             id="next_true" value="{{ $aturan->next_true }}" name="next" required>
                                         <label class="form-check-label" for="next_true">Ya</label>

@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-    <div class="container container-p-y">
+    <div class="container container-p-y pt-2">
         <div class="card">
             <h5 class="card-header">Data Konsultasi</h5>
             <div class="card-body">
@@ -14,6 +14,7 @@
                                 <th class="text-start">Nama</th>
                                 <th class="text-start">Email</th>
                                 <th>Kerusakan</th>
+                                <th>Tanggal</th>
                                 <th>#</th>
                             </tr>
                         </thead>
@@ -31,6 +32,7 @@
                                 <td class="text-start">{{ $konsultasi->nama_lengkap }}</td>
                                 <td class="text-start">{{ $konsultasi->email }}</td>
                                 <td>{{ $kerusakan }}</td>
+                                <td>{{ date('d M Y', strtotime($konsultasi->created_at)) }}</td>
                                 <td>
                                     <a href="/konsultasi/hasil/{{ $konsultasi->uuid }}" class="btn btn-primary badge my-badge btn-show">
                                         <i class="bx bx-show"></i>
@@ -44,5 +46,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

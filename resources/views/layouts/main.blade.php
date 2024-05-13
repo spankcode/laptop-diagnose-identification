@@ -6,12 +6,12 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Sistem Pakar Diagnosa Kerusakan Komputer | Dashboard</title>
+    <title>Sistem Pakar Diagnosa Kerusakan Komputer</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    {{-- <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.svg') }}" /> --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/logo.svg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,18 +50,19 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container flex-column">
-            @if (!Request::is('login'))
+            @if (Request::is('konsultasi'))
                 <div class="text-end text-black-50 px-4 py-2">
                     <a href="/login" class="btn btn-primary py-2">
                         Login
                     </a>
                 </div>
-            @else
+            @elseif(Request::is('login'))
                 <div class="text-end text-black-50 px-4 py-2">
                     <a href="/" class="btn btn-primary py-2">
-                        Back
+                        Kembali
                     </a>
                 </div>
+            @else
             @endif
 
             @if (session('error'))
@@ -87,8 +88,8 @@
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
-                        made by
-                        <a href="" target="_blank" class="footer-link fw-bolder">Lulu ❤️</a>
+                        by
+                        <a href="" target="_blank" class="footer-link fw-bolder">SpankCode❤️</a>
                     </div>
                 </div>
             </footer>
