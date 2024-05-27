@@ -54,7 +54,7 @@ const Index = () => {
                                             }`}
                                         >
                                             <td className="py-1 px-2 md:py-2 md:px-4 text-wrap border border-gray-300">
-                                                {index + 1}
+                                                {indexOfFirstItem + index + 1}
                                             </td>
                                             <td className="py-1 px-2 md:py-2 md:px-4 text-wrap border border-gray-300">
                                                 {row.nama_lengkap}

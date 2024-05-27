@@ -33,9 +33,6 @@ const MainLayout = ({ children, session }) => {
                 )}
             </header>
             <main className="flex flex-col py-2 px-6">
-                <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-70">
-                    <ApplicationLogo className="w-full min-h-screen" />
-                </div>
                 <section className="flex justify-center items-center">
                     <div className="w-full z-20 sm:max-w-xl px-6 py-4 bg-white bg-opacity-90 shadow-xl overflow-hidden sm:rounded-lg">
                         {children}
