@@ -14,8 +14,6 @@ const Index = () => {
         os: data_os.length > 0 ? data_os[0].nama : "",
     });
 
-    console.log("Input :", data);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         post(route("konsultasi.store"), data);

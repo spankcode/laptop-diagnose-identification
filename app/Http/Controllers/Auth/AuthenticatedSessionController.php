@@ -27,11 +27,20 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        if (Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+            $request->session()->regenerate();
 
-        $request->session()->regenerate();
+            return redirect()->intended(route('dashboard', absolute: false))
+                ->with('success', 'Berhasil Login');
+        }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return back()
+            ->withInput($request->only('email', 'password'))
+            ->withErrors([
+                'email' => 'Kredensial tidak valid.',
+                'password' => 'Kredensial tidak valid'
+            ])
+            ->with('error', 'Login gagal, Mohon periksa kembali kredensial Anda!');
     }
 
     /**
@@ -45,6 +54,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/')
+            ->with('success', 'Berhasil Logout!');
     }
 }

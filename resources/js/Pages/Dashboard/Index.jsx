@@ -1,14 +1,25 @@
 import DashboardLayout from "@/Layouts/DashboardLayout";
 import { Head, usePage } from "@inertiajs/react";
+import React from "react";
+import ModalMessage from "../../Components/ModalMessage";
 
 export default function Index() {
-    const { auth } = usePage().props;
+    const { auth, flash } = usePage().props;
+    const [showMessageModal, setShowMessageModal] = React.useState(false);
     const user = auth.user;
+
+    React.useEffect(() => {
+        if (flash.success) {
+            setShowMessageModal(true);
+        } else {
+            setShowMessageModal(false);
+        }
+    }, [flash.success]);
 
     return (
         <>
             <Head title="Dashboard" />
-            <DashboardLayout user={auth.user}>
+            <DashboardLayout user={user}>
                 <div className="py-4 md:py-6">
                     <div className="max-w-full mx-auto">
                         <div className="bg-white overflow-hidden shadow-sm rounded-lg">
@@ -22,6 +33,12 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
+                <ModalMessage
+                    message={`${flash.success}, Menggunakan akun ${user.name}!`}
+                    type="success"
+                    show={showMessageModal}
+                    onClose={() => setShowMessageModal(false)}
+                />
             </DashboardLayout>
         </>
     );

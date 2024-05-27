@@ -1,24 +1,33 @@
-import { useEffect } from "react";
+import React from "react";
 import Checkbox from "@/Components/Checkbox";
 import GuestLayout from "@/Layouts/MainLayout";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
-import { Head, useForm } from "@inertiajs/react";
+import { Head, useForm, usePage } from "@inertiajs/react";
+import ModalMessage from "../../Components/ModalMessage";
 
 export default function Login({ status }) {
+    const { flash } = usePage().props;
+    const [showMessageModal, setShowMessageModal] = React.useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
         remember: false,
     });
 
-    useEffect(() => {
+    React.useEffect(() => {
+        if (flash.error) {
+            setShowMessageModal(true);
+        } else {
+            setShowMessageModal(false);
+        }
+
         return () => {
             reset("password");
         };
-    }, []);
+    }, [flash.error, errors]);
 
     const submit = (e) => {
         e.preventDefault();
@@ -101,6 +110,12 @@ export default function Login({ status }) {
                     </div>
                 </form>
             </div>
+            <ModalMessage
+                message={flash.error}
+                type="error"
+                show={showMessageModal}
+                onClose={() => setShowMessageModal(false)}
+            />
         </GuestLayout>
     );
 }
